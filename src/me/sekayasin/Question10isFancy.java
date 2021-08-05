@@ -15,7 +15,7 @@ public class Question10isFancy {
         if (number == 1) return 1;
         if (number <= 0) return 0;
 
-        for (int i = 0; i < number/2; i++){
+        for (int i = 0; currentNumber < number ; i++){
             currentNumber = 3*previous + 2*pPrevious;
             if (currentNumber == number) {
                 isFancyNumber = 1;
