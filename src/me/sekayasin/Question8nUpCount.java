@@ -1,5 +1,3 @@
-package me.sekayasin;
-
 public class Question8nUpCount {
 
     public static void main(String[] args) {
@@ -8,15 +6,15 @@ public class Question8nUpCount {
 
     static int nUpCount(int[] numbers, int number) {
         int upCount = 0;
-        int previousPartialSum = 0;
-        int currentPartialSum = 0;
+        int previousPartialSum = numbers[0];
 
-        for (int i = 0; i < numbers.length; i++) {
-            previousPartialSum = currentPartialSum;
-            currentPartialSum += numbers[i];
+        for (int i = 1; i < numbers.length; i++) {
+           
+            int currentPartialSum =previousPartialSum + numbers[i];
             if (previousPartialSum <= number && currentPartialSum > number) {
                 upCount += 1;
             }
+            previousPartialSum = currentPartialSum;
         }
         return upCount;
     }
