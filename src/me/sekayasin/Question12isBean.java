@@ -6,18 +6,19 @@ public class Question12isBean {
         System.out.println(isBean(new int[]{3,8,4}));
     }
 
-    static int isBean(int[] a) {
-        int isBean = 0;
+     static int isBean(int[] a) {
 
         for (int i = 0; i < a.length; i++) {
+            boolean pass=false;
             for (int j = 0; j < a.length; j++) {
-                if (a[i] == 2*a[j] || a[i] == 2*a[j] + 1 || a[i] == a[j]/2) {
-                    isBean = 1;
+                if (a[j] == 2*a[i] || a[j] == 2*a[i] + 1 || a[j] == a[i]/2) {
+                    pass=true;
                     break;
                 }
             }
-            return isBean;
+            if (!pass) return 0; 
+            
         }
-        return isBean;
+        return 1;
     }
 }
