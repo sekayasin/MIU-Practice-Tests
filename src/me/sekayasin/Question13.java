@@ -7,12 +7,13 @@ public class Question13 {
     }
 
     static String expressedAsSumOfTwoSquares(int n) {
+        int wayNum = 0;
         for (int i = 1; i <= n; i++){
             for (int j = 1; j <= n; j++) {
                 if (n == i * i + j * j)
-                    return n + " = " + i + "^2 + " + j + "^2";
+                    wayNum++;
             }
         }
-        return n + " cannot be expressed as a sum of two squares";
+        return wayNum == 2;
     }
 }
