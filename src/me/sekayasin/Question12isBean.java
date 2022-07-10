@@ -7,17 +7,17 @@ public class Question12isBean {
     }
 
     static int isBean(int[] a) {
-        int isBean = 0;
+        int beansCount = 0;
 
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
                 if (a[i] == 2*a[j] || a[i] == 2*a[j] + 1 || a[i] == a[j]/2) {
-                    isBean = 1;
+                    beansCount++;
                     break;
                 }
             }
-            return isBean;
+          
         }
-        return isBean;
+        return beansCount >= a.length ? 1 : 0;
     }
 }
